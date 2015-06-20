@@ -37,27 +37,72 @@
 
 - (NSString *)rollCallDwarves:(NSArray *)dwarves
 {
-    return nil;
+    NSMutableString *dwarvesString = [[NSMutableString alloc] init];
+    NSInteger count = 0;
+
+    for (NSString *dwarf in dwarves) {
+        count++;
+        NSString *dwarfString = [NSString stringWithFormat:@"%ld. %@", count, dwarf];
+        [dwarvesString appendString:dwarfString];
+        if (count < [dwarves count]) {
+            [dwarvesString appendString:@" | "];
+        }
+
+    }
+
+    return dwarvesString;
 }
 
 - (NSArray *)summonCaptainPlanet:(NSArray *)planeteerCalls
 {
-    return nil;
+    NSMutableArray *uppercaseCalls = [NSMutableArray new];
+
+    for (NSString *call in planeteerCalls) {
+        NSString *uppercaseCall = [call uppercaseString];
+        NSString *excitedCall = [uppercaseCall stringByAppendingString:@"!"];
+        [uppercaseCalls addObject:excitedCall];
+    }
+
+    return uppercaseCalls;
 }
 
 - (NSArray *)longPlaneteerCalls:(NSArray *)planeteerCalls
 {
-    return nil;
+    NSMutableArray *longCalls = [NSMutableArray new];
+
+    for (NSString *call in planeteerCalls) {
+        if ([call length] > 4) {
+            [longCalls addObject:call];
+        }
+    }
+
+    return longCalls;
 }
 
 - (NSString *)findTheCheese:(NSArray *)cheeses
 {
+    NSArray *cheeseArray = @[ @"cheddar", @"gouda", @"camembert"];
+
+    for (NSString *cheese in cheeses) {
+        if ([cheeseArray containsObject:cheese]) {
+            return cheese;
+        }
+    }
+
     return nil;
 }
 
 - (NSArray *)calculateDollarAmountsWithReceipt:(NSArray *)receipt
 {
-    return nil;
+    NSMutableArray *monetaryValues = [NSMutableArray new];
+
+    for (NSString *value in receipt) {
+        NSInteger moneyCount = [[value componentsSeparatedByString:@"$"] count] - 1;
+        NSString *convertedMoney = [NSString stringWithFormat:@"$%ld", moneyCount];
+        [monetaryValues addObject:convertedMoney];
+    }
+
+    return monetaryValues;
 }
 
 
