@@ -37,27 +37,69 @@
 
 - (NSString *)rollCallDwarves:(NSArray *)dwarves
 {
-    return nil;
+    NSMutableString *rollCall = [NSMutableString string];
+    NSInteger position = 0;
+    
+    for (id object in dwarves){
+        position += 1;
+        if (position == 1) {
+            [rollCall appendFormat:@"%li. %@", (long)position, object];
+        }
+        else {
+            [rollCall appendFormat:@" | %li. %@", (long)position, object];
+        }
+        
+    }
+    NSLog(@"%@", rollCall);
+    return rollCall;
 }
 
 - (NSArray *)summonCaptainPlanet:(NSArray *)planeteerCalls
 {
-    return nil;
+    NSMutableArray *capitalizedArray = [NSMutableArray array];
+    for (id object in planeteerCalls){
+        [capitalizedArray addObject:[[object uppercaseString] stringByAppendingString:@"!"]];
+    }
+    NSLog(@"%@", capitalizedArray);
+    return capitalizedArray;
 }
 
 - (NSArray *)longPlaneteerCalls:(NSArray *)planeteerCalls
 {
-    return nil;
+    NSMutableArray *longPlaneteerArray = [NSMutableArray array];
+    for (id object in planeteerCalls){
+        if ([object length] > 4){
+            [longPlaneteerArray addObject:object];
+        }
+    }
+    NSLog(@"%@", longPlaneteerArray);
+    return longPlaneteerArray;
 }
 
-- (NSString *)findTheCheese:(NSArray *)cheeses
-{
+- (NSString *)findTheCheese:(NSArray *)cheeses{
+    for (id object in cheeses){
+        if ([object isEqualToString:@"cheddar"]){
+            return object;
+        }
+        else if ([object isEqualToString:@"gouda"]){
+            return object;
+        }
+        else if ([object isEqualToString:@"camembert"]){
+            return object;
+        }
+    }
     return nil;
 }
 
 - (NSArray *)calculateDollarAmountsWithReceipt:(NSArray *)receipt
 {
-    return nil;
+    NSInteger amount = 0;
+    NSMutableArray *newArray = [NSMutableArray array];
+    for (id object in receipt){
+        amount = [object length];
+        [newArray addObject: [NSString stringWithFormat: @"$%li", (long)amount]];
+    }
+    return newArray;
 }
 
 
