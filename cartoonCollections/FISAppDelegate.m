@@ -16,6 +16,35 @@
     return YES;
 }
 
+- (NSString*)stringByRollCallingDwarfsInArray:(NSArray*)dwarfs {
+//    NSString* format = @"%d. %@|";
+//    it(@"returns a string of all of the dwarfs' names with a number prefix and separated by a '|' symbol"
+    NSMutableString* mutableResult = [[NSMutableString alloc]initWithString:@""];
+    int index = 1;
+    for (NSString* dwarf in dwarfs){
+        [mutableResult appendFormat:@"%d. %@ | ", index,dwarf];
+        index++;
+    }
+    NSUInteger length = [mutableResult length];
+    
+    NSRange range = NSMakeRange(length-3, 2);
+    [mutableResult deleteCharactersInRange:range];
+    NSLog(@"%@", mutableResult);
+    return (NSString*)mutableResult;
+}
+- (NSArray*)arrayOfPlaneteerShoutsFromArray:(NSArray*)powers {
+    return nil;
+}
+- (NSString*)summonCaptainPlanetWithPowers:(NSArray*)powers{
+    return nil;
+}
+- (NSString*)findFirstOfPremiumCheeses:(NSArray*)premiumCheeses inCheesesInStock:(NSArray*)cheesesInStock{
+    return nil;
+}
+- (NSArray*)arrayByConvertingMoneyBagsIntoPaperBills:(NSArray*)moneyBags {
+    return nil;
+}
+
 /**
  
  *  Define your method implementations here.
