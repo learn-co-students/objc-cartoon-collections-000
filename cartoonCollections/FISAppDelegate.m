@@ -27,7 +27,7 @@
     }
     NSUInteger length = [mutableResult length];
     
-    NSRange range = NSMakeRange(length-3, 2);
+    NSRange range = NSMakeRange(length-3, 3);
     [mutableResult deleteCharactersInRange:range];
 //    NSRange range2 = NSMakeRange(0, 1);
 //    [mutableResult deleteCharactersInRange:range2];
@@ -38,7 +38,7 @@
     
     NSLog(@"ExpectedString is ********************\n%@", expectedRollCall);
     NSLog(@"Length of expected string is %lu\n", (unsigned long)[expectedRollCall length]);
-    return expectedRollCall;
+    return (NSString*)mutableResult;
 }
 - (NSArray*)arrayOfPlaneteerShoutsFromArray:(NSArray*)powers {
     return nil;
