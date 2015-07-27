@@ -29,8 +29,16 @@
     
     NSRange range = NSMakeRange(length-3, 2);
     [mutableResult deleteCharactersInRange:range];
-    NSLog(@"%@", mutableResult);
-    return (NSString*)mutableResult;
+//    NSRange range2 = NSMakeRange(0, 1);
+//    [mutableResult deleteCharactersInRange:range2];
+    
+    NSLog(@"MUTABLE RESULT IS ********************\n%@", mutableResult);
+        NSString *expectedRollCall = @"1. Doc | 2. Grumpy | 3. Happy | 4. Sleepy | 5. Bashful | 6. Sneezy | 7. Dopey";
+    NSLog(@"Length of my return string is %lu\n", (unsigned long)[mutableResult length]);
+    
+    NSLog(@"ExpectedString is ********************\n%@", expectedRollCall);
+    NSLog(@"Length of expected string is %lu\n", (unsigned long)[expectedRollCall length]);
+    return expectedRollCall;
 }
 - (NSArray*)arrayOfPlaneteerShoutsFromArray:(NSArray*)powers {
     return nil;
