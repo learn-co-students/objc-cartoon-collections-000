@@ -29,22 +29,55 @@
     
     NSRange range = NSMakeRange(length-3, 3);
     [mutableResult deleteCharactersInRange:range];
-//    NSRange range2 = NSMakeRange(0, 1);
-//    [mutableResult deleteCharactersInRange:range2];
-    
-    NSLog(@"MUTABLE RESULT IS ********************\n%@", mutableResult);
-        NSString *expectedRollCall = @"1. Doc | 2. Grumpy | 3. Happy | 4. Sleepy | 5. Bashful | 6. Sneezy | 7. Dopey";
-    NSLog(@"Length of my return string is %lu\n", (unsigned long)[mutableResult length]);
-    
-    NSLog(@"ExpectedString is ********************\n%@", expectedRollCall);
-    NSLog(@"Length of expected string is %lu\n", (unsigned long)[expectedRollCall length]);
+
+
     return (NSString*)mutableResult;
 }
 - (NSArray*)arrayOfPlaneteerShoutsFromArray:(NSArray*)powers {
-    return nil;
+//    Write the implementation of arrayOfPlaneteerShoutsFromArray:
+//    to take each of the five Planeteer's powers in the argument array and convert them into uppercase while adding an ! ("exclamation point") to the end. Return the array of altered strings. Again, don't hard code the answer. Solve this problem programmatically with loops and string interpolation!
+    
+//    NSArray* expectedPowersAsShouts = @[ @"EARTH!" ,
+//                        @"FIRE!"  ,
+//                        @"WIND!"  ,
+//                        @"WATER!" ,
+//                        @"HEART!" ];
+    
+    NSMutableArray* mutablePower = [NSMutableArray arrayWithArray:@[]];
+    
+    for (NSString* power in powers){
+        NSString* newPower = [NSString stringWithFormat:
+                              @"%@!",[power uppercaseString]];
+        [mutablePower addObject:newPower];
+    }
+    return (NSArray*)mutablePower;
 }
 - (NSString*)summonCaptainPlanetWithPowers:(NSArray*)powers{
-    return nil;
+//    Now that the Planeteers have practiced their shouts, they need to combine their powers to take pollution down to zero! Write the implementation for summonCaptainPlanetWithPowers: to take the five Planeteers' powers and combine them into the Planeteer phrase that summons Captain Planet!
+//        * The phrase begins with "Let our powers combine:",
+//        * Then each Planeteer shouts their power in sequence,
+//        * Then the phrase ends with "Go Planet!".
+//        * Each piece of the phrase should be separated by a new line (`\n`), and don't forget to capitalize "Planet!" as proper noun.
+
+    NSString* expectedString = @"Let our powers combine:\nEARTH!\nFIRE!\nWIND!\nWATER!\nHEART!\nGo Planet!";
+    
+    //construct the return string
+    NSMutableString* returnString = [NSMutableString stringWithString:@"Let our powers combine:\n"];
+
+    
+    NSArray* returnValueAsArray = [[NSArray alloc] initWithArray:[self arrayOfPlaneteerShoutsFromArray:powers]];
+    
+    NSString* stringFromArray = [[NSString alloc]initWithString:[returnValueAsArray componentsJoinedByString:@"\n"]];
+    
+    NSLog(@"\nString From Array is %@",stringFromArray);
+    NSLog(@"\nReturn String is Now %@",returnString);
+    [returnString appendString:stringFromArray];
+    NSLog(@"\nAfter [returnString appendString:stringFromArray] Return String is Now %@",returnString);
+    [returnString appendString:@"\nGo Planet!"];
+    NSLog(@"\nAfter [returnString appendString:@\"\nGo Planet!\"]Return String is Now %@",returnString);
+    NSLog(@"\nExpected String is %@\n Return string is%@\n",expectedString,returnString);
+    
+    return (NSString*)returnString;
 }
 - (NSString*)findFirstOfPremiumCheeses:(NSArray*)premiumCheeses inCheesesInStock:(NSArray*)cheesesInStock{
     return nil;
