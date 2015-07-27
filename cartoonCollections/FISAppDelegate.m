@@ -59,7 +59,7 @@
 //        * Then the phrase ends with "Go Planet!".
 //        * Each piece of the phrase should be separated by a new line (`\n`), and don't forget to capitalize "Planet!" as proper noun.
 
-    NSString* expectedString = @"Let our powers combine:\nEARTH!\nFIRE!\nWIND!\nWATER!\nHEART!\nGo Planet!";
+//    NSString* expectedString = @"Let our powers combine:\nEARTH!\nFIRE!\nWIND!\nWATER!\nHEART!\nGo Planet!";
     
     //construct the return string
     NSMutableString* returnString = [NSMutableString stringWithString:@"Let our powers combine:\n"];
@@ -69,21 +69,62 @@
     
     NSString* stringFromArray = [[NSString alloc]initWithString:[returnValueAsArray componentsJoinedByString:@"\n"]];
     
-    NSLog(@"\nString From Array is %@",stringFromArray);
-    NSLog(@"\nReturn String is Now %@",returnString);
+
     [returnString appendString:stringFromArray];
-    NSLog(@"\nAfter [returnString appendString:stringFromArray] Return String is Now %@",returnString);
     [returnString appendString:@"\nGo Planet!"];
-    NSLog(@"\nAfter [returnString appendString:@\"\nGo Planet!\"]Return String is Now %@",returnString);
-    NSLog(@"\nExpected String is %@\n Return string is%@\n",expectedString,returnString);
     
     return (NSString*)returnString;
 }
+
 - (NSString*)findFirstOfPremiumCheeses:(NSArray*)premiumCheeses inCheesesInStock:(NSArray*)cheesesInStock{
-    return nil;
+
+    for (NSString* premiumCheese in premiumCheeses){
+        for (NSString* cheese in cheesesInStock){
+            if([premiumCheese isEqualToString:cheese]){
+                return premiumCheese;
+            }
+        }
+    }
+    return @"No premium cheeses in stock.";
 }
+
 - (NSArray*)arrayByConvertingMoneyBagsIntoPaperBills:(NSArray*)moneyBags {
-    return nil;
+//    describe(@"arrayByConvertingMoneyBagsIntoPaperBills:", ^{
+//        __block NSArray *scroogesMoneyBags;
+//        __block NSArray *scroogesPaperBills;
+//        
+//        beforeEach(^{
+//            scroogesMoneyBags = @[ @"$$$$$"      ,
+//                                   @"$"          ,
+//                                   @"$$"         ,
+//                                   @"$$$$$$$$$$" ];
+//            
+//            scroogesPaperBills = @[ @"$5"  ,
+//                                    @"$1"  ,
+//                                    @"$2"  ,
+//                                    @"$10" ];
+//        });
+//        
+//        it(@"returns an NSArray object",^{
+//            expect([appDelegate arrayByConvertingMoneyBagsIntoPaperBills:scroogesMoneyBags
+//                    ]).to.beKindOf([NSArray class]);
+//        });
+//        
+//        it(@"returns on array of numerical strings equivalent to the counts of the dollar signs in the submitted array's strings",^{
+//            expect([appDelegate arrayByConvertingMoneyBagsIntoPaperBills:scroogesMoneyBags
+//                    ]).to.equal(scroogesPaperBills);
+//        });
+
+//    Scrooge McDuck is a real financial conservative and still keeps his money in dollar coins! However, he's decided to try out this new thing called "paper bills" (he hears they're the next big thing); he's brought several bags (strings) of coins to you, a bank teller, to convert into paper money. Write the implementation for arrayByConvertingMoneyBagsIntoPaperBills: to count the dollar coins (one coin is represented by one $) in each string in Scrooge's array into an equivalent paper bill (a string in the manner of @"$20").
+    
+    NSMutableArray* returnedPaperBills = [NSMutableArray arrayWithArray:@[]];
+    for (NSString* moneyBag in moneyBags){
+        NSUInteger length = [moneyBag length];
+        NSString* newString = [NSString stringWithFormat:@"$%lu",(unsigned long)length];
+        [returnedPaperBills addObject:newString];
+
+    }
+    return (NSArray*)returnedPaperBills;
 }
 
 /**
