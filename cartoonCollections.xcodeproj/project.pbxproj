@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2B1F9E1B66A8B600656B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2B1F9D1B66A8B600656B87 /* Main.storyboard */; };
 		3D959789C5448B6DB49DA04A /* libPods-cartoonCollectionsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87CFE709488E0C6468972C35 /* libPods-cartoonCollectionsTests.a */; };
 		722A4D5319D9FBA100B3ABAB /* FISAppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 722A4D5219D9FBA100B3ABAB /* FISAppDelegateSpec.m */; };
 		D8478076193F52D8005FEBA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8478075193F52D8005FEBA5 /* Foundation.framework */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F2B1F9D1B66A8B600656B87 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2C982BEA7061979FE8EFEBD6 /* Pods-cartoonCollectionsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cartoonCollectionsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cartoonCollectionsTests/Pods-cartoonCollectionsTests.release.xcconfig"; sourceTree = "<group>"; };
 		722A4D5219D9FBA100B3ABAB /* FISAppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISAppDelegateSpec.m; sourceTree = "<group>"; };
 		87CFE709488E0C6468972C35 /* libPods-cartoonCollectionsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cartoonCollectionsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 			children = (
 				D8478084193F52D8005FEBA5 /* FISAppDelegate.h */,
 				D8478085193F52D8005FEBA5 /* FISAppDelegate.m */,
+				0F2B1F9D1B66A8B600656B87 /* Main.storyboard */,
 				D8478087193F52D8005FEBA5 /* Images.xcassets */,
 				D847807C193F52D8005FEBA5 /* Supporting Files */,
 			);
@@ -240,6 +243,7 @@
 			files = (
 				D8478080193F52D8005FEBA5 /* InfoPlist.strings in Resources */,
 				D8478088193F52D8005FEBA5 /* Images.xcassets in Resources */,
+				0F2B1F9E1B66A8B600656B87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
