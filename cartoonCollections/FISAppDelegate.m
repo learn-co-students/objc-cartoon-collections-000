@@ -60,6 +60,7 @@
 -(NSArray *)arrayByConvertingMoneyBagsIntoPaperBills:(NSArray *) moneyBags{
     NSMutableArray *bills = [[NSMutableArray alloc]init];
     for (NSInteger i =0; i < [moneyBags count]; i++) {
+        
         NSInteger numberOfBills = [[moneyBags[i] componentsSeparatedByString:@"$"]count]-1;
         [bills addObject:[NSString stringWithFormat:@"$%li", numberOfBills]];
     }
